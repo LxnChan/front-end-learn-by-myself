@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>循环语句</title>
+    </head>
+    <body>
+        <script>
+            // for(初始变量; 条件; 操作){循环体}
+            // 逻辑上是先检测初始变量是否符合条件，然后执行循环体，最后执行操作（改变变量）
+            for(var i = 1; i <= 5; i++){
+                console.log("。");
+            }
+        </script>
+        <script>
+            var i=1;
+            var sum=0;
+            // while(条件){循环体}，条件为真时执行循环体
+            while(i<=100){
+                sum = sum + i;
+                i = i + 1;
+                console.log("While - " + sum);
+            };
+            
+        </script>
+    </body>
+</html>

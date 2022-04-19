@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>计数器</title>
+    </head>
+    <body>
+        <div id="main">
+            <!-- v-on --> 
+            <!-- <sth @动作="方法"> -->
+            <button @click="add">+</button>
+            <span> {{ d0 }} </span>
+            <button @click="minus">-</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var numqi = new Vue({
+                //挂载到标签
+                el: "#main",
+                //数据
+                data:{
+                    d0: 0
+                },
+                //方法
+                methods:{
+                    //添加
+                    add(){
+                        //console.log("test")
+                        if (this.d0<10){
+                            //限制最大值为10
+                            this.d0++;
+                        }else{
+                            alert("Don't Add!");
+                        }                        
+                    },
+                    //递减
+                    minus(){
+                        //console.log("test")
+                        //this.d0--;
+                        if (this.d0<1){
+                            //限制最小值为0
+                            alert("Don't Minus.");
+                        }else{
+                            this.d0--;
+                        }
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

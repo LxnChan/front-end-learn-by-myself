@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>数值转换</title>
+    </head>
+    <body>
+        <script>
+            //parseInt转换为整数
+            //parseFloat转换为小数
+            var str = '2.33';
+            console.log(parseInt(str));
+            console.log(parseFloat(str));
+            //string(变量)转换为字符串
+            var num = 233;
+            console.log(String(num));
+            //boolean(变量) 转换为布尔值
+            //当转换的变量值为0,NaN, ,null,undefined时为False，其余全部为True.
+            var q;
+            console.log(Boolean(q));    //false
+            var m = null;
+            console.log(Boolean(m));    //false
+            var rnm = '退钱';
+            console.log(Boolean(rnm));  //true
+            console.log(Boolean(num));  //true
+        </script>
+    </body>
+</html>

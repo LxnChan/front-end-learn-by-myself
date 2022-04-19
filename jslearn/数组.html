@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>循环语句</title>
+    </head>
+    <body>
+        <script>
+            // 数组引用方式：数组名[索引编号]
+            // 数组.length查询长度
+            var na1=[1,2,3,4,5];
+            console.log(na1[na1.length - 1]);
+            // 数组 intanceof Array
+            // 用于检测对象是否为数组，返回True则为数组，否则不是
+            console.log(na1 instanceof Array);
+            // 数组遍历（For）
+            for (var i = 0;i<=4;i++){
+                console.log(na1[i]);
+            }
+            // 添加元素到数组末尾
+            na1.push(123);
+            console.log(na1[na1.length - 1]);
+            // 删除数组末尾的元素
+            na1.pop();
+            console.log(na1);
+            na1.pop();
+            console.log(na1);
+            // 在数组开头添加元素
+            na1.unshift(94188);
+            console.log(na1[0]);
+            // 在数组开头删除元素
+            na1.shift();
+            console.log(na1);
+            na1.shift();
+            console.log(na1);
+            // 数组截取
+            // 数组.slice(截取开始索引号，截取结束索引号)
+            // 返回值仍为数组，会包含开始的索引，但不会包含结束的索引
+            console.log(na1.slice(2,3));
+        </script>
+    </body>
+</html>

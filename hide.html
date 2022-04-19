@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>图片显隐</title>
+    </head>
+    <body>
+        <div id="pics">
+            <img src="https://flow.lxnchan.cn/files/pic/pic20220408a.png" v-show="isShow" >
+        </div>
+        <button id="changes" @click="change">显示</button>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var tupian=new Vue({
+                el: "#pics",
+                data:{
+                    isShow: false
+                }
+            })
+            var qiehuan=new Vue({
+                el: "#changes",
+                methods:{
+                    change(){
+                        tupian.isShow = !this.isShow;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

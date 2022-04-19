@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>图片切换</title>
+    </head>
+    <body>
+        <div id="picchange">
+            <img :src="picArr[index]">
+            <br>
+            <a href="#" @click="next" v-show="show1">下一张</a>
+            <a href="#" @click="prev" v-show="show2">上一张</a>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var picChangeMth = new Vue({
+                el: "#picchange",
+                data: {
+                    picArr: [
+                        "https://flow.lxnchan.cn/files/DianaEmotions/1.jpg",
+                        "https://flow.lxnchan.cn/files/DianaEmotions/2.jpg",
+                        "https://flow.lxnchan.cn/files/DianaEmotions/3.jpg",
+                        "https://flow.lxnchan.cn/files/DianaEmotions/4.jpg",
+                        "https://flow.lxnchan.cn/files/DianaEmotions/5.jpg"
+                    ],
+                    index: 0,
+                    show1: true,
+                    show2: true
+                },
+                methods:{
+                    // 上一张
+                    prev(){
+                        this.index--;
+                        if (this.index <= 0){
+                            this.show2 = false;
+                        };
+                        if (this.index != 4){
+                            this.show1=true;
+                        }
+                    },
+                    // 下一张
+                    next(){
+                        this.index++;
+                        if (this.index >= 4){
+                            this.show1 = false;
+                        };
+                        if (this.index != 0){
+                            this.show2=true;
+                        }
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

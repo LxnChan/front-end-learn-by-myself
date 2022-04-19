@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>vue-learn-1</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-text 会替换掉元素内的所有内容-->
+            <h2 v-text="message">test</h2>
+            <h3 v-text="info"></h3>
+            <h3> {{ message }} Changes! </h3>
+            <h3> {{ message + info }} </h3>
+            <h3> {{ array[0] + message }} </h3>
+            <h3> {{ info + ' rnm ' + random[2] }} </h3>
+            <h3> {{ info0.grid }} </h3>
+            <h3> {{ info0.info1.info2.info3 }} </h3>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    message: "text00001",
+                    info: "information",
+                    array: ["1", "2", "3"],
+                    random: ["2", "6", "8"],
+                    info0: {
+                        grid: "5n5",
+                        info1: {
+                            info2: {
+                                info3: "rnm"
+                            }
+                        }
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-if</title>
+    </head>
+    <body>
+        <div id="viftest">
+            <img src="https://flow.lxnchan.cn/files/pic/pic20220408a.png" v-if="isShow" @click="ch">
+            <button @click="ch">Change</button>
+            <br>
+            <!-- v-if可以插入表达式 -->
+            <h2 v-if="temp>=35">温度高于35</h2>
+            <button @click="up">增加</button>
+            <button @click="down">减少</button>
+            <h2>当前温度： {{ temp }}</h2>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            //v-show的本质是设置style属性
+            //v-if的本质是直接操纵dom树，可以插入表达式
+            var app=new Vue({
+                el: "#viftest",
+                data: {
+                    isShow: true,
+                    temp: 40
+                },
+                methods:{
+                    ch(){
+                        //a=!a 取反
+                        this.isShow=!this.isShow;
+                    },
+                    up(){
+                        this.temp++;
+                    },
+                    down(){
+                        this.temp--;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

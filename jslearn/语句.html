@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>语句</title>
+    </head>
+    <body>
+        <script>
+            //  判断会员类型并计算对应的金额，
+            //  非会员（vip=0）没有优惠，
+            //  会员100元以下没有优惠，100元九折，100元以上九折基础上再七折。
+            var money = Number(prompt("请输入商品价格","512"));
+            var vip = Number(prompt("请输入会员类型（0/1）","0"));
+            //  switch(判断条件){                 
+            //    case 结果1: 代码块 break;
+            //    case 结果2: 代码块 break;
+            //    ...
+            //    default: 代码块;
+            //  }
+            //  
+            //  上述代码等同于：
+            //  if (判断条件=结果1){
+            //      代码块;
+            //  } else if (判断条件=结果2){
+            //      代码块;
+            //  } else {
+            //      默认代码块;
+            //  }
+            switch(vip){
+                case 0:
+                    if (money>0){
+                        alert("金额为" + money);
+                    } else {
+                        alert("输入错误")
+                    }
+                    break;
+                case 1:
+                    if (money<100 && money>0) {
+                        alert("金额为" + money);
+                    } else if (money>100){
+                        alert("金额为" + Number((money*0.9)*0.7));
+                    } else if (money=100){
+                        alert("金额为" + Number(money*0.9));
+                    } else{
+                        alert("输入有误？");
+                    }
+                    break;
+            }
+            //  This is Playground.
+            console.log("Line1")
+            console.log("line2")
+        </script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>vue-v-lable</title>
+    </head>
+    <body>
+        <!-- v-text标签替换容器中的内容为文字 -->
+        <p id="info" v-text="message + ' m2'"></p>
+        <p id="label2" v-text="infoke2.info3 + '...'"></p>
+        <!-- v-html innerHTML，将data中的数据以html解析 -->
+        <div id="g0">
+            <!-- 以下两种写法均可 -->
+            <input type="button" value="EventBind-Click" v-on:click="doit">
+            <input type="button" value="EventBind-Click" @click="changeFood">
+        </div>
+        <div id="g1">
+            <h2 @click="changename" >testar {{ localdata }} </h2>
+        </div>
+        <div id="htmltest" v-html="d1"></div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var infom = new Vue({
+                el: "#info",
+                data:{
+                    message: "kext",
+                    infoke: {
+                        info2: "loading"
+                    }
+                }
+            })
+            var infox = new Vue({
+                el: "#label2",
+                data: {
+                    infoke2:{
+                        info3: "loading"
+                    }
+                }
+            })
+            var htmlin = new Vue({
+                el: "#htmltest",
+                data: {
+                    //此处可以填写html代码
+                    d1: "<a href='//lxnchan.cn'>htmltest</a>"
+                }
+            })
+            var htmlmeth = new Vue({
+                el: "#g0",
+                data: {
+                    food:"Fish"
+                },
+                methods: {
+                    //“:function”可以不写
+                    doit:function(){
+                        alert("test")
+                    },
+                    changeFood(){
+                        //引用data格式为对象.data项
+                        console.log(htmlin.d1)
+                    }
+                }
+            })
+            var gm1 = new Vue({
+                el: "#g1",
+                data: {
+                    localdata: "test"
+                },
+                methods: {
+                    changename(){
+                        this.localdata+="0test0"
+                        //console.log(this.localdata)
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
